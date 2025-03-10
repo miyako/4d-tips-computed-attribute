@@ -23,3 +23,4 @@ $parameters:=New collection($d1; $d2)
 * since `$age` is typed, decimals are removed. in other words, age `70.5` doesn't convert to `70` years and `6` months.
 * `$d1` is the earlier birthday after which the age would qualify
 * `$d2` is the later birthday on which the age would qualify
+* if `Current date` is the 29th of February then the dates would match either 29th of February or 1st of March
