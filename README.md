@@ -13,9 +13,10 @@ to search by age, you need to know the range of dates in which the birth day fal
 the [example given in the documentation](https://developer.4d.com/docs/ORDA/ordaClasses#function-query-attributename) is shown below:
 
 ```4d
+var $age : Integer
 $age:=Num($event.value)  // integer
 $d1:=Add to date(Current date; -$age-1; 0; 0)
 $d2:=Add to date($d1; 1; 0; 0)
 $parameters:=New collection($d1; $d2)
 ```
-* **`Num`** is used to cast text to number. historically 4D accepts textual values for searching numeric values. 
+* **`Num`** is used to cast text to number. historically 4D accepts textual values for searching numeric values. since `$age` is typed, decimals are removed. in other words, age `70.5` doesn't convert to `70` years and `6` months.
