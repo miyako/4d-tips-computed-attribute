@@ -19,4 +19,5 @@ $d1:=Add to date(Current date; -$age-1; 0; 0)
 $d2:=Add to date($d1; 1; 0; 0)
 $parameters:=New collection($d1; $d2)
 ```
-* **`Num`** is used to cast text to number. historically 4D accepts textual values for searching numeric values. since `$age` is typed, decimals are removed. in other words, age `70.5` doesn't convert to `70` years and `6` months.
+* **`Num`** is used to cast text to number. this is done presumably to respect the historic behaviour where 4D allows textual values to be used for searching numeric values.
+* since `$age` is typed, decimals are removed. in other words, age `70.5` doesn't convert to `70` years and `6` months.
