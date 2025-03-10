@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE base SYSTEM "http://www.4d.com/dtd/2007/base.dtd" >
+<base name="age" uuid="BC953CD412964F878B795009F04AD063" collation_locale="ja">
+	<schema name="DEFAULT_SCHEMA"/>
+	<table name="People" uuid="B99DFBEAF2B1413C84E44045E59E91E1" id="1">
+		<field name="Id" uuid="E3EE440A285C464588B5DC9BB906B128" type="4" unique="true" autosequence="true" not_null="true" id="1"/>
+		<field name="dateOfBirth" uuid="BDB85747B242419E8513868BAE2CAC50" type="8" id="2"/>
+		<primary_key field_name="Id" field_uuid="E3EE440A285C464588B5DC9BB906B128"/>
+		<table_extra>
+			<editor_table_info displayable_fields_count="6">
+				<color red="237" green="211" blue="181" alpha="255"/>
+				<coordinates left="58.89453125" top="1.16796875" width="120" height="167.33203125"/>
+			</editor_table_info>
+		</table_extra>
+	</table>
+	<index kind="regular" unique_keys="true" uuid="5CC4A922203A459185F62A45822F7ECC" type="7">
+		<field_ref uuid="E3EE440A285C464588B5DC9BB906B128" name="Id">
+			<table_ref uuid="B99DFBEAF2B1413C84E44045E59E91E1" name="People"/>
+		</field_ref>
+	</index>
+	<index kind="regular" uuid="CBECC33CF07E4373B8DF19D9DEFE0266" type="1">
+		<field_ref uuid="BDB85747B242419E8513868BAE2CAC50" name="dateOfBirth">
+			<table_ref uuid="B99DFBEAF2B1413C84E44045E59E91E1" name="People"/>
+		</field_ref>
+	</index>
+	<base_extra>
+		<journal_file journal_file_enabled="true"/>
+	</base_extra>
+</base>
