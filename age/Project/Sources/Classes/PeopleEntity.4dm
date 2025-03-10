@@ -109,7 +109,7 @@ Function query age($event : Object) : Object
 	Case of 
 		: ($event.operator="==")
 			
-			$query:="dateOfBirth > :1 and dateOfBirth < :2"
+			$query:="dateOfBirth > :1 and dateOfBirth <= :2"
 			
 		: ($event.operator="===")
 			
@@ -117,7 +117,7 @@ Function query age($event : Object) : Object
 			
 		: ($event.operator="!=")
 			
-			$query:="not(dateOfBirth > :1 and dateOfBirth < :2)"
+			$query:="not(dateOfBirth > :1 and dateOfBirth <= :2)"
 			
 		: ($event.operator="!==")
 			
@@ -125,20 +125,20 @@ Function query age($event : Object) : Object
 			
 		: ($event.operator=">=")
 			
-			$query:="dateOfBirth < :2"
+			$query:="dateOfBirth <= :2"
 			
 		: ($event.operator="<=")
 			
-			$query:="dateOfBirth >= :1"
+			$query:="dateOfBirth > :1"
 			
 		: ($event.operator=">")
 			
-			$query:="dateOfBirth < :2"
+			$query:="dateOfBirth <= :2"
 			$event.value+=1
 			
 		: ($event.operator="<")
 			
-			$query:="dateOfBirth >= :1"
+			$query:="dateOfBirth > :1"
 			$event.value-=1
 			
 		Else 
