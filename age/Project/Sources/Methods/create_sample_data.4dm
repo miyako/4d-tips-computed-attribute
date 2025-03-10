@@ -24,7 +24,7 @@ $youngFirst:=ds:C1482.People.all().orderBy("age asc")
 $youngLast:=ds:C1482.People.all().orderBy("age desc")
 
 $seventyToday:=ds:C1482.People.query("age === :1"; 70)
-$seventy:=ds:C1482.People.query("age === :1"; 70)
+$seventy:=ds:C1482.People.query("age == :1"; 70)
 $seventyAndOver:=ds:C1482.People.query("age >= :1"; 70).distinct("age")
 $twentyAndUnder:=ds:C1482.People.query("age <= :1"; 20).distinct("age")
 $overSeventy:=ds:C1482.People.query("age > :1"; 70).distinct("age")
