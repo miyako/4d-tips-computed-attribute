@@ -157,8 +157,10 @@ Function query age($event : Object) : Object
 			$query:="dateOfBirth != null"
 			
 		Else 
-			$from:=Add to date:C393($today; -$event.value-1; 0; 0)
-			$to:=Add to date:C393($today; -$event.value; 0; 0)
+			var $age : Integer
+			$age:=Num:C11($event.value)
+			$from:=Add to date:C393($today; -$age-1; 0; 0)
+			$to:=Add to date:C393($today; -$age; 0; 0)
 			$parameters:=[$from; $to]
 	End case 
 	

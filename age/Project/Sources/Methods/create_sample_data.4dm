@@ -1,4 +1,10 @@
 //%attributes = {}
+$seventyToday:=ds:C1482.People.query("age === :1"; "70")
+$seventyToday:=ds:C1482.People.query("age === :1"; 70.5)
+
+
+
+
 $null:=ds:C1482.People.query("age == null")
 $notNull:=ds:C1482.People.query("age != null")
 
