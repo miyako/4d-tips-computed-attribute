@@ -1,4 +1,9 @@
 //%attributes = {}
+$null:=ds:C1482.People.query("age == null")
+$notNull:=ds:C1482.People.query("age != null")
+
+
+
 If (False:C215)
 	
 	TRUNCATE TABLE:C1051([People:1])

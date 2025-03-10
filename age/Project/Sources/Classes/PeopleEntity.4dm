@@ -145,11 +145,22 @@ Function query age($event : Object) : Object
 			return 
 	End case 
 	
-	$from:=Add to date:C393($today; -$event.value-1; 0; 0)
-	$to:=Add to date:C393($today; -$event.value; 0; 0)
-	
 	var $parameters : Collection
-	$parameters:=[$from; $to]
+	
+	Case of 
+		: ($event.value=Null:C1517) && (($event.operator="==") || ($event.operator="==="))
+			
+			$query:="dateOfBirth == null"
+			
+		: ($event.value=Null:C1517) && (($event.operator="!=") || ($event.operator="!=="))
+			
+			$query:="dateOfBirth != null"
+			
+		Else 
+			$from:=Add to date:C393($today; -$event.value-1; 0; 0)
+			$to:=Add to date:C393($today; -$event.value; 0; 0)
+			$parameters:=[$from; $to]
+	End case 
 	
 	return {query: $query; parameters: $parameters}
 	
